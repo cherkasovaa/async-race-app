@@ -36,7 +36,8 @@ The main goal of the project is to demonstrate working with asynchronous request
 
 ## Launch and installation
 
-For the application to function fully, **a local server needs to be running**, which provides the API for managing cars and races.
+> [!WARNING]
+> For the application to function fully, **a local server needs to be running**, which provides the API for managing cars and races.
 
 ### Starting the server
 
