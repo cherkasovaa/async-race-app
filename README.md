@@ -32,7 +32,7 @@ The main goal of the project is to demonstrate working with asynchronous request
 
 ## Demo
 
-**Live Demo:** [Open the website](https://cherkasovaa.github.io/async-race-spa/)
+**Live Demo:** [Open the website](https://cherkasovaa.github.io/async-race-app/)
 
 ## Launch and installation
 
