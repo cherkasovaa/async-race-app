@@ -32,7 +32,7 @@ The main goal of the project is to demonstrate working with asynchronous request
 
 ## Demo
 
-**Live Demo:** [Open the website](https://rolling-scopes-school.github.io/cherkasovaa-JSFE2024Q4/async-race/)
+**Live Demo:** [Open the website](https://cherkasovaa.github.io/async-race-spa/)
 
 ## Launch and installation
 
