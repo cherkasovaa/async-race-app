@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "webpack serve --open --config ./webpack.config.js --env mode=dev",
     "build": "webpack --config ./webpack.config.js --env mode=prod",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
     "format": "prettier --write --ignore-unknown .",
     "ci:format": "prettier --list-different --ignore-unknown .",
     "stylelint": "stylelint '**/*{.css,.scss}'",
