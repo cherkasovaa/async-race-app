@@ -1,11 +1,11 @@
-import globals from 'globals';
 import js from '@eslint/js';
-import tsPlugin from '@typescript-eslint/eslint-plugin';
-import tsParser from '@typescript-eslint/parser';
-import unicornPlugin from 'eslint-plugin-unicorn';
-import prettierConfig from 'eslint-config-prettier';
+import prettier from 'eslint-config-prettier';
+import pluginUnicorn from 'eslint-plugin-unicorn';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
-export default [
+export default tseslint.config(
+  // Ignore files
   {
     ignores: [
       'node_modules/**',
@@ -16,34 +16,31 @@ export default [
       '**/global.d.ts',
     ],
   },
-
-  js.configs.recommended,
-  unicornPlugin.configs.recommended,
   {
+    extends: [
+      js.configs.recommended,
+      ...tseslint.configs.recommended,
+      ...tseslint.configs.stylistic,
+    ],
     files: ['**/*.ts'],
-    plugins: {
-      '@typescript-eslint': tsPlugin,
-    },
     languageOptions: {
-      parser: tsParser,
-      parserOptions: {
-        project: './tsconfig.json',
-        tsconfigRootDir: import.meta.dirname,
-      },
-      globals: {
-        ...globals.browser,
-      },
+      ecmaVersion: 2020,
+      globals: globals.browser,
+    },
+    plugins: {
+      '@typescript-eslint': tseslint.plugin,
+      unicorn: pluginUnicorn,
     },
     rules: {
-      ...tsPlugin.configs['recommended-type-checked'].rules,
-      ...tsPlugin.configs['stylistic-type-checked'].rules,
-      ...tsPlugin.configs['strict-type-checked'].rules,
-
-      'no-console': 'warn',
-      'no-undef': 'warn',
+      // General rules
+      'no-console': ['warn', { allow: ['warn', 'error'] }],
       'no-unused-vars': 'off',
-      '@typescript-eslint/no-unused-vars': 'error',
+      'max-lines-per-function': [
+        'warn',
+        { max: 40, skipBlankLines: true, skipComments: true },
+      ],
 
+      // TypeScript rules
       '@typescript-eslint/consistent-type-assertions': [
         'error',
         { assertionStyle: 'never' },
@@ -55,19 +52,13 @@ export default [
         { accessibility: 'explicit', overrides: { constructors: 'off' } },
       ],
       '@typescript-eslint/member-ordering': 'error',
-
-      'class-methods-use-this': 'warn',
-      'max-lines-per-function': [
-        'warn',
-        { max: 40, skipBlankLines: true, skipComments: true },
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
       ],
+      '@typescript-eslint/no-explicit-any': 'warn',
     },
   },
-  {
-    linterOptions: {
-      noInlineConfig: true,
-      reportUnusedDisableDirectives: true,
-    },
-  },
-  prettierConfig,
-];
+
+  prettier
+);
