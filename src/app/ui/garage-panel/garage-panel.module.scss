@@ -1,0 +1,39 @@
+.garage-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  width: 100%;
+  max-width: max-content;
+
+  &__buttons-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    gap: 10px;
+  }
+
+  &__button {
+    --color: var(--secondary-color);
+
+    width: 100%;
+    border: 1px solid var(--color);
+
+    font-family: var(--primary-font);
+    color: var(--color);
+
+    background: transparent;
+
+    transition: var(--transition-duration);
+
+    &:hover {
+      --color: var(--tertiary-color);
+    }
+
+    &:disabled {
+      --color: var(--disabled-color);
+
+      cursor: auto;
+    }
+  }
+}

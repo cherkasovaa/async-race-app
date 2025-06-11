@@ -1,0 +1,16 @@
+.header {
+  display: block;
+  padding: 15px;
+  box-shadow: 0 2px 15px rgb(255 255 255 / 10%);
+}
+
+.navigation {
+  display: flex;
+  gap: 15px;
+
+  & &__button {
+    padding: 7px 25px;
+    color: var(--primary-color);
+    background: var(--secondary-color);
+  }
+}

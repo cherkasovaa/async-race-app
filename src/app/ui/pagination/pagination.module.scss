@@ -1,0 +1,30 @@
+.pagination {
+  display: flex;
+  gap: 7px;
+  justify-content: flex-end;
+
+  &__button {
+    --color: var(--secondary-color);
+
+    width: max-content;
+    padding: 5px 20px;
+    border: 1px solid var(--color);
+
+    font-family: var(--primary-font);
+    color: var(--color);
+
+    background: transparent;
+
+    transition: var(--transition-duration);
+
+    &:hover {
+      --color: var(--tertiary-color);
+    }
+
+    &:disabled {
+      --color: var(--disabled-color);
+
+      cursor: auto;
+    }
+  }
+}

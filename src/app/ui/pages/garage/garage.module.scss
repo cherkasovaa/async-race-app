@@ -1,0 +1,30 @@
+.garage {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  width: 100%;
+
+  &__car-area {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+.message {
+  position: absolute;
+  z-index: 1000;
+  inset: 0;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  font-size: var(--font-size-xl);
+  text-align: center;
+
+  backdrop-filter: blur(1px);
+}

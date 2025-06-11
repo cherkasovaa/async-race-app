@@ -1,0 +1,19 @@
+.table {
+  border-collapse: collapse;
+
+  &__head {
+    color: var(--primary-color);
+    background: var(--secondary-color);
+  }
+
+  &__cell {
+    padding: 5px 10px;
+    border: none;
+    text-align: center;
+
+    & > svg {
+      width: 60px;
+      height: 30px;
+    }
+  }
+}
