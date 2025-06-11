@@ -1,0 +1,41 @@
+.form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  &__input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+  }
+
+  &__color-input {
+    width: 40px;
+    height: 100%;
+  }
+
+  &__button {
+    --color: var(--secondary-color);
+
+    min-width: 80px;
+    border: 1px solid var(--color);
+
+    font-family: var(--primary-font);
+    color: var(--color);
+
+    background: transparent;
+
+    transition: var(--transition-duration);
+
+    &:hover {
+      --color: var(--tertiary-color);
+    }
+
+    &:disabled {
+      cursor: auto;
+      border: 1px solid var(--disabled-color);
+      color: var(--disabled-color);
+    }
+  }
+}

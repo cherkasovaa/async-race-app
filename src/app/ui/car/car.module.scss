@@ -1,0 +1,53 @@
+.car {
+  display: block;
+  margin-bottom: 5px;
+  border-bottom: 1px dashed var(--tertiary-color);
+
+  &__top-part {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 7px;
+  }
+
+  &__bottom-part {
+    display: flex;
+    gap: 5px;
+  }
+
+  &__button {
+    --color: var(--secondary-color);
+
+    padding: 5px 10px;
+    border: 1px solid var(--color);
+
+    font-family: var(--primary-font);
+    color: var(--color);
+
+    background: transparent;
+
+    transition: var(--transition-duration);
+
+    &:hover {
+      --color: var(--tertiary-color);
+    }
+
+    &:disabled {
+      --color: var(--attention-color);
+    }
+  }
+
+  &__image {
+    width: 50px;
+    height: 30px;
+  }
+
+  &__flag {
+    position: relative;
+    right: 70px;
+
+    width: 20px;
+    height: 30px;
+    margin-left: auto;
+  }
+}

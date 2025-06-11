@@ -1,0 +1,33 @@
+/* Colors */
+$primary-color: #1e1e20;
+$secondary-color: #98f701;
+$tertiary-color: #fff;
+$disabled-color: #ccc;
+$attention-color: #ac0e0e;
+
+/* Fonts */
+$primary-font: 'Racing Sans One', sans-serif;
+$secondary-font: 'Open Sans', sans-serif;
+
+/* Font size */
+$font-size-xl: 4em;
+$font-size-l: 2em;
+$font-size-m: 1.5em;
+$font-size-s: 1em;
+
+$transition-duration: 0.3s;
+
+:root {
+  --primary-color: #{$primary-color};
+  --secondary-color: #{$secondary-color};
+  --tertiary-color: #{$tertiary-color};
+  --disabled-color: #{$disabled-color};
+  --attention-color: #{$attention-color};
+  --primary-font: #{$primary-font};
+  --secondary-font: #{$secondary-font};
+  --font-size-xl: #{$font-size-xl};
+  --font-size-l: #{$font-size-l};
+  --font-size-m: #{$font-size-m};
+  --font-size-s: #{$font-size-s};
+  --transition-duration: #{$transition-duration};
+}
