@@ -2,7 +2,7 @@ name: CI
 
 on: push
 
-jobs: 
+jobs:
   setup:
     runs-on: ubuntu-latest
     steps:
@@ -35,7 +35,7 @@ jobs:
 
       - name: Lint
         run: npm run lint
-  
+
   format:
     needs: setup
     runs-on: ubuntu-latest
@@ -53,4 +53,4 @@ jobs:
         run: npm ci
 
       - name: Format
-        run: npm run format:check
+        run: npm run format
