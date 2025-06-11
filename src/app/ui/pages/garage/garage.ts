@@ -366,7 +366,7 @@ export default class Garage extends Page {
     const results = await Promise.allSettled(preparationPromises);
     const carsReadyToAnimate: CarAnimationOptions[] = [];
 
-    for (let result of results) {
+    for (const result of results) {
       if (result.status === 'fulfilled') {
         const optionsWithCallback = {
           ...result.value,

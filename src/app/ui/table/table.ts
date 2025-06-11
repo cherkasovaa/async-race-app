@@ -7,8 +7,8 @@ import type {
   FullWinnerDetails,
 } from '../../types/interfaces';
 import ElementCreator from '../../utils/element-creator';
-import View from '../view';
 import type { Order } from '../pages/winner/winner';
+import View from '../view';
 
 export default class Table extends View {
   public tBody: ElementCreator | undefined = undefined;
@@ -165,7 +165,7 @@ export default class Table extends View {
    * @param {ElementCreator} rootElement - The table header row element creator to which the cells will be added.
    */
   private createHeaderCell(rootElement: ElementCreator): void {
-    for (let cell of this.tHeadCells) {
+    for (const cell of this.tHeadCells) {
       const cellOptions: Creator = {
         tag: 'th',
         classNames: [styles.tableCell],

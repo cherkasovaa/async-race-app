@@ -4,12 +4,12 @@ import type {
   Creator,
   InteractiveElementOptions,
 } from '../../types/interfaces';
-import View from '../view';
 import ElementCreator from '../../utils/element-creator';
 import Button from '../button/button';
 import type Main from '../main/main';
 import type Garage from '../pages/garage/garage';
 import type Winner from '../pages/winner/winner';
+import View from '../view';
 
 /**
  * Represents the header component of the application, including navigation.
@@ -119,7 +119,7 @@ export default class Header extends View {
       },
     ];
 
-    for (let page of pages) {
+    for (const page of pages) {
       const parameters: InteractiveElementOptions = {
         text: page.name,
         classNames: [styles.navigationButton],

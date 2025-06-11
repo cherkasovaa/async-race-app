@@ -84,7 +84,7 @@ export default class ElementCreator {
    * @param {Record<string, string>} attributes - An object where keys are attribute names and values are attribute values.
    */
   public setAttributes(attributes: Record<string, string>): void {
-    for (let [key, value] of Object.entries(attributes)) {
+    for (const [key, value] of Object.entries(attributes)) {
       this.element.setAttribute(key, value);
     }
   }
